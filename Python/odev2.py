@@ -32,6 +32,7 @@ for i in range(lessonCount):
     else:
         print("Hatalı giris yaptiniz")
 
-print(f" {passedExams} adet dersten geçtiniz. {failedExams} adet dersten kaldiniz.")  
+print(f" {passedExams} adet dersten geçtiniz.")  
+print("{failedExams} adet dersten kaldiniz.")
 print(f"Kalınan ders  notları:{kDers} ")  
 print(f"Geçilen ders  notları:{gDers} ") 

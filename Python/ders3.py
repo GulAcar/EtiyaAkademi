@@ -1,4 +1,4 @@
-file= open("employes.txt", "w")
+file= open("employes.txt", "a+")
 emply=[]
 try :
     emplyCount =int(input("Kaç tane çalışan bilgisi girilecek "))
@@ -10,7 +10,7 @@ try :
         maas= float(input(f"  Aldığı maaş:"))
         maass=str(maas)
         emply.append(maas)
-        emplys=(f"{i+1} {ad} +" "+ {soyad} +"  "+ {maas} ")
+        emplys=(f"{i+1} {ad} + {soyad} + {maas} ")
         file.writelines(emplys)
         
         

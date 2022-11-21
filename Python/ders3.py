@@ -11,13 +11,15 @@ try :
         maass=str(maas)
         emply.append(maas)
         emplys=(f"{i+1} {ad} + {soyad} + {maas} ")
+        #
         file.writelines(emplys)
+        file.seek(0)
         
         
 except:
     print("hatalı giriş yapıldı")
 
-
+print(f" {emply}")
 file.close()
 
 

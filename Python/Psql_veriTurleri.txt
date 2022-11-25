@@ -1,0 +1,71 @@
+Boolean
+Bu veri türümüz anlaşıldığı üzere true ya da false işlemlerinde kullanılıyor.
+
+Karakter Türleri
+char(n)--------------sabit boyutlu
+varchar(n)-----------sabit boyutlu
+text-----------------sınırsız uzunluk
+
+Sayısal Türler
+smallint            – 2 byte
+integer             – 4 byte
+bigint              – 8 byte
+
+decimal ve numeric variable türünden
+real                – 4 byte -6 ondalık basamaklı 
+double precision    – 8 byte
+smallserial         – 2 byte
+serial              – 4 byte
+bigserial           – 8 byte
+numeric             - 20 ondalık basamaklı saklamak için
+--------------------------------------------------
+
+*Monetary Types
+   money	                         -8 bytes
+
+*Character Types
+   character varying(n), varchar(n)	 -1 bytes
+   text	                                 -64 bytes
+   character(n), char(n)	         -1 bytes
+
+*Binary Data Types
+   bytea	1 ya da 4 + binary uzunluğu
+
+*Boolean Type
+   Doğru ya da Yanlış sadece iki değeri vardır.
+   TRUE -t -true -y -yes -on -1
+   FALSE -f -false -n -no -off -0
+
+*Range
+   Aynı kolon içerisinde bir aralık tutabilmek amacıyla kullanılır
+
+*Enum
+   Statik, sıralı veri kümeleri saklamak için kullanılır.
+
+*Date
+    Y/M/D
+*Time
+    Saat saklamak içindir.
+*Timestamp
+Date ve Time saklamak içindir. Timezone bulunmaz.
+*->Timestamptz
+Timestamp’a Timezone’un eklenmiş halidir.
+--------------------------------------------------------
+now()
+Transaction’a başlandığındaki zamanı gösterir. (current_timestamp)
+
+Not=>
+PostgreSQL’de her şey transaction içersinde çalıştırılır.
+
+JSONB
+JSON verinin binary olarak sıkılaştırılarak tutulmasıdır.
+PostgreSQL’in NoSQL olarak tanımlanabilir, her nekadar yanlış olsa da.
+NoSQL veritabanlarından daha eski bir geçmişe sahiptir.
+Index’lenebilir.
+
+
+
+
+
+
+

@@ -1,0 +1,81 @@
+SELECT SÖZ DİZİMİ --------> SELECT <sütun_adı>, <sütun_adı>, ...
+                            FROM <tablo_adı>;
+
+SELECT *
+FROM <tablo_adı>; -------> tüm sütünlara ulaşmak için
+
+
+*SQL komutlarının büyük harf - küçük harf duyarlılıkları yoktur.
+
+WHERE ve KARŞILAŞTIRMA OPERATÖRLERİ
+WHERE
+Çoğu durumda ise verilerin tamamını değil belirli koşulları sağlayan verileri görmek isteriz.
+Bunun için WHERE anahtar kelimesini kullanırız.
+
+WHERE Söz Dizimi ---------> SELECT <sütun_adı>, <sütun_adı>, ...
+                            FROM <tablo_adı>
+                            WHERE <koşul>;
+
+
+KARŞILAŞTIRMA OPERATÖRLERİ
+< -Küçüktür
+> -büyüktür
+<= -küçük eşit
+>= -büyük eşit
+=  -eşit
+<> -eşit değil
+!= -eşit değil
+
+MANTIKSAL OPARETÖRLER
+
+AND -true sonucu dönmesi için bu iki koşulumuzun da sağlanması gerekiyor.
+OR - OR operatörünün true sonucu dönmesi için bu iki koşulumuzunda herhangi birinin sağlanması yeterlidir. 
+NOT - NOT operatörü bize verilerin hangi koşul dışı olduğunu gösterir. 
+
+BETWEEN Örnek Kullanım
+SELECT *
+FROM film
+WHERE length BETWEEN 100 AND 140;
+-->Alınacak değer 100 ve 140 aralığı dahildir.
+
+IN Örnek Kullanım
+SELECT *
+FROM film
+WHERE length IN (30,60,90,120);
+-->Uzunluğu 30, 60, 90 veya 120 dakikaya eşit olan verileri alıyoruz.
+
+LIKE SÖZ DİZİMİ
+     SELECT <sütun_adı>, <sütun_adı>, ...
+     FROM <tablo_adı>
+      WHERE <sütun_adı> LIKE <şablon>;
+ILIKE operatörü LIKE operatörünün case - insensitive versiyonudur.
+
+COUNT
+COUNT aggregate fonksiyonu ilgili sorgu sonucunda oluşan veri sayısını bildirir. 
+    SELECT * 
+    FROM actor
+    WHERE first_name = 'Penelope';
+
+ancak veri sayısını bulmak istersek COUNT fonksiyonunu kullanırız.
+
+    SELECT COUNT(*)
+    FROM actor
+    WHERE first_name = 'Penelope';
+
+LIMIT ve OFFSET
+
+   SELECT *                    SELECT*
+   FROM film                   FROM film
+   WHERE title LIKE 'B%'       WHERE title LIKE 'B%'
+   ORDER BY length DESC        ORDER BY length DESC
+   LIMIT 10;                   OFFSET 6
+                               LİMİT 4;
+uzunluğa göre ilk 10 film.     
+                               uzunluğa göre 6'dan sonraki ilk 4 film.
+
+GROUP BY
+verileri gruplama için GROUP BY anahtar kelimesi kullanılır.
+SELECT <sütun_adı>, <sütun_adı>, ... (veya aggregate func)
+FROM <tablo_adı>
+GROUP BY <sütun_adı>, <sütun_adı>, ...
+
